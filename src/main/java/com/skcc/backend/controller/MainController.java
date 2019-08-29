@@ -83,31 +83,6 @@ public class MainController {
 	}
 
 	/**
-	* MyBatisTemplate
-	*
-	* @return Map<String, Object>
-	* @throws Exception
-	*/
-	@RequestMapping("/data")
-	@ResponseBody
-	public Map<String, Object> getTemplate() throws Exception{
-		logger.info("Hello World!-getTemplate-data-req_MariaDB");
-
-		ArrayList<Map<String, Object>> resultIt = (ArrayList<Map<String, Object>>) mainService.getTemplate();
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-
-		try {
-			resultMap.put("rows", resultIt);
-			logger.info("Hello World!-getTemplate-data-returnMap{}", resultMap);
-		} catch (Exception e) {
-			logger.error(">>>>>>>>>>>>>>>>>>MyBatis Test Error Con");
-			throw new Exception("MyBatis Test Error Con");
-		}
-
-		return resultMap;
-	}
-
-	/**
 	* JPATemplate
 	*
 	*@return void
